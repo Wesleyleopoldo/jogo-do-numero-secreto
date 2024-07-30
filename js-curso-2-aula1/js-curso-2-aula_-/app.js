@@ -23,6 +23,7 @@ function reiniciarJogo() {
     exibirTextoNaTela('h1', 'Jogo do Número Secreto');
     exibirTextoNaTela('p', 'Digite um número entre 1 e 10');
     document.getElementById('reiniciar').setAttribute('disabled', true);
+    document.getElementById('chutar').removeAttribute('disabled');
 }
 
 function verificarChute() {
@@ -32,6 +33,7 @@ function verificarChute() {
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
         let mensagemTentativas = `Você acerto o número secreto com ${tentativas} ${palavraTentativa}`;
         limparCampo();
+        document.getElementById('chutar').setAttribute('disabled', true);
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
 
